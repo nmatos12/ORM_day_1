@@ -6,8 +6,10 @@ const api_routes = require('./routes/api_routes');
 const PORT = process.env.PORT || 3000;
 
 const app = express();
+console.log(process.env);
 
 app.use(express.static('public'));
+api_routes.use(express.json());
 
 app.use('/api', api_routes);
 

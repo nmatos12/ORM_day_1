@@ -10,4 +10,12 @@ router.get('/courses', (req, res) => {
     });
 });
 
+// Create a new course
+router.post('courses', (req, res) => {
+    const courseData = req.body;
+    Course.create(courseData).then(newCourseObj => {
+        res.send(newCourseObj);
+    })
+});
+
 module.exports = router;
